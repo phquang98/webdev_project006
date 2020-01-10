@@ -10,6 +10,9 @@ const plantAttributeRoutes = require("./routes/plantattributeRoutes");
 // Initiate the server
 const app = express();
 
+// Enable CORS
+app.use(cors());
+
 // Define the port (default is 3301)
 const port = process.env.PORT || 3301;
 
@@ -24,9 +27,6 @@ app.get("/", (req, res) => {
   );
 });
 app.use("/plantattribute", plantAttributeRoutes);
-
-// Enable CORS
-app.use(cors());
 
 // Start the server
 app.listen(port, () => {

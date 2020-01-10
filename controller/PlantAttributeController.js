@@ -27,10 +27,11 @@ exports.createNewPlantAttribute = (req, res) => {
 exports.readPlantAttribute = (req, res) => {
   // const id = new mongoose.Types.ObjectId(req.params.plantattributeId);
   // mongoshell su dung object id voi string type la khac nhau ->
-  PlantAttribute.findById(req.params.plantattributeId, (err, task) => {
+  PlantAttribute.findById(req.params.plantAttributeId, (err, task) => {
     if (err) {
       res.status(500).send(err);
     }
+    console.log(req.params.plantAttributeId);
     console.log("at here ...");
     res.status(200).json(task);
   });
