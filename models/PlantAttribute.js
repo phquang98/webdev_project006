@@ -10,7 +10,11 @@ const PlantAttriSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  voc: {
+  humidity: {
+    type: String,
+    required: true
+  },
+  tvoc: {
     type: String,
     required: true
   },
@@ -18,11 +22,15 @@ const PlantAttriSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  time: {
+  co2: {
+    type: String,
+    required: true
+  },
+  timestamp: {
     type: Date,
     default: Date.now
   },
-  childnodeId: {
+  childnodeid: {
     type: String,
     required: true
   }
