@@ -18,6 +18,9 @@ router.post("/", plantAttributeController.createNewPlantAttribute);
 // GET HTTP Req
 router.get("/:plantAttributeId", plantAttributeController.readPlantAttribute);
 
+// GET HTTP Req for childnodeid
+router.get("/childnode/:childnodeid", plantAttributeController.readByChildn);
+
 // PUT HTTP Req
 router.put("/:plantAttributeId", plantAttributeController.updatePlantAttribute);
 

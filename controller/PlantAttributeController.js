@@ -37,6 +37,18 @@ exports.readPlantAttribute = (req, res) => {
   });
 };
 
+// get HTTP to child node using childnodeid -> get a bunch of data from diff time
+exports.readByChildn = (req, res) => {
+  PlantAttribute.find({ childnodeid: req.params.childnodeid }, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.status(200).json(data);
+  })
+    .sort({ time: -1 })
+    .limit(7);
+};
+
 exports.updatePlantAttribute = (req, res) => {
   PlantAttribute.findOneAndUpdate(
     { _id: req.params.taskid },
